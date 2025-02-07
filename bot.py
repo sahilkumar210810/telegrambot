@@ -22,9 +22,8 @@ async def main() -> None:
     # Bot ko start karna
     await application.run_polling()
 
-# Agar aap Railway pe deploy kar rahe hain, to yeh line hata dijiye
-# asyncio.run(main()) ko is tarah replace karein
+# Railway environment mein yeh directly run hoga bina asyncio.run() ke
 if __name__ == '__main__':
+    # Directly call the asynchronous main function without using asyncio.run()
     import asyncio
-    # Railway ya aise environment mein jo already event loop chala rahe hain
-    asyncio.get_event_loop().run_until_complete(main())
+    asyncio.ensure_future(main())
