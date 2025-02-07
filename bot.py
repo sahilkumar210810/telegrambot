@@ -5,7 +5,7 @@ def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Hello!')
 
 def main() -> None:
-    token = 5552243131:AAE4loadC5g5XKtmQb1crp_EvWBoIkucA9I
+    token = 'YOUR_BOT_API_TOKEN'
     updater = Updater(token)
     dispatcher = updater.dispatcher
     dispatcher.add_handler(CommandHandler('start', start))
