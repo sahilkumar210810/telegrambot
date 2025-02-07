@@ -1,6 +1,7 @@
 import os
 from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
+import asyncio
 
 # Command handler function
 async def start(update: Update, context: CallbackContext) -> None:
@@ -24,6 +25,5 @@ async def main() -> None:
 
 # Railway environment mein yeh directly run hoga bina asyncio.run() ke
 if __name__ == '__main__':
-    # Directly call the asynchronous main function without using asyncio.run()
-    import asyncio
-    asyncio.ensure_future(main())
+    # Directly call the asynchronous main function using asyncio.run()
+    asyncio.run(main())
